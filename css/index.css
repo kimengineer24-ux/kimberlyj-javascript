@@ -35,3 +35,9 @@ ul {
 section {
     margin-bottom: 40px;
 }
+#Skills ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
