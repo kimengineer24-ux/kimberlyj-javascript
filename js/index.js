@@ -61,3 +61,18 @@ messageList.appendChild(newMessage);
 event.target.reset();
 
 });
+fetch("https://api.github.com/users/kimengineer24-ux/repos")
+  .then((response) => response.json())
+  .then((repositories) => {
+    const projectSection = document.getElementById("Projects");
+const projectList = projectSection.querySelector("ul");
+for (let i = 0; i < repositories.length; i++) {
+  const project = document.createElement("li");
+  project.innerText = repositories[i].name;
+  projectList.appendChild(project);
+}
+    console.log(repositories);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
