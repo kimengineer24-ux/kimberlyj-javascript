@@ -70,9 +70,11 @@ for (let i = 0; i < repositories.length; i++) {
   const project = document.createElement("li");
   project.innerText = repositories[i].name;
   projectList.appendChild(project);
-}
-    console.log(repositories);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+}).catch((error) => {
+  console.error(error);
+
+  const projectSection = document.getElementById("Projects");
+  const errorMessage = document.createElement("p");
+  errorMessage.innerText = "Sorry, projects could not be loaded.";
+  projectSection.appendChild(errorMessage);
+});
